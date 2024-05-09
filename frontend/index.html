@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Order Coffee</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Order Coffee</h1>
+            <form id="order-form" action="" method="post">
+                <h2>Choose from our drinks</h2>
+                <label for="drink">Drink:</label>
+                <select name="drink" id="drink">
+                    <option value="Espresso">Espresso</option>
+                    <option value="Cappuccino">Cappuccino</option>
+                    <option value="Mocha">Mocha</option>
+                    <option value="Macchiato">Macchiato</option>
+                </select><br>
+                <input type="submit">
+            </form>
+        </div>
+        <script>
+            const form = document.getElementById('order-form');
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                const drink = document.getElementById('drink').value;
+                fetch('http://localhost:3069/order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ order: drink })
+                }).then(response => response.json())
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+.container {
+    width: 50vw;
+    margin: auto;
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 28px;
+    font-family: sans-serif;
+}
+
+select {
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: aliceblue;
+}
+
+input {
+    font-size: 30px;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: lightsalmon;
+    border-radius: 10px;
+}
